@@ -236,6 +236,8 @@ class Contact extends Remote\Model
     const CONTACT_STATUS_ACTIVE = 'ACTIVE';
 
     const CONTACT_STATUS_ARCHIVED = 'ARCHIVED';
+    
+    const CONTACT_STATUS_GDPRREQUEST = 'GDPRREQUEST';
 
     /**
      * Get the resource uri of the class (Contacts) etc.
