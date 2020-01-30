@@ -75,6 +75,31 @@ class EarningsRate extends Remote\Model
      */
 
     /**
+     * The Type used to group allowances for reporting to the ATO. Undocumented. Only applicable if EarningsType is ALLOWANCE.
+     * 
+     * @property string AllowanceType
+     */
+    
+    
+    /**
+     * Option AllowanceType for ALLOWANCE EarningsType EarningsRate
+     *
+     * @property string AllowanceType
+     */
+    const ALLOWANCETYPE_CAR = 'CAR';
+
+    const ALLOWANCETYPE_LAUNDRY = 'LAUNDRY';
+
+    const ALLOWANCETYPE_MEALS = 'MEALS';
+
+    const ALLOWANCETYPE_TRANSPORT = 'TRANSPORT';
+
+    const ALLOWANCETYPE_TRAVEL = 'TRAVEL';
+
+    const ALLOWANCETYPE_OTHER = 'OTHER';
+
+
+    /**
      * Option Amount for FIXEDAMOUNT RateType EarningsRate.
      *
      * @property float Amount
@@ -171,7 +196,8 @@ class EarningsRate extends Remote\Model
             'Multiplier' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'AccrueLeave' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Amount' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
-            'CurrentRecord' => [false, self::PROPERTY_TYPE_BOOLEAN, null, false, false]
+            'CurrentRecord' => [false, self::PROPERTY_TYPE_BOOLEAN, null, false, false],
+            'AllowanceType' => [false, self::PROPERTY_TYPE_ENUM, null, false, false]
         ];
     }
 
@@ -283,6 +309,15 @@ class EarningsRate extends Remote\Model
         $this->_data['IsExemptFromSuper'] = $value;
 
         return $this;
+    }
+
+    public function getAllowanceType($value) {
+        return $this->_data['AllowanceType'];
+    }
+
+    public function setAllowanceType($value) {
+        $this->propertyUpdated('AllowanceType', $value);
+        $this->_data['AllowanceType'] = $value;
     }
 
     /**
