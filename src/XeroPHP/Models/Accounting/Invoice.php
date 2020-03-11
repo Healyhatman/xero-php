@@ -114,7 +114,7 @@ class Invoice extends Remote\Model
     /**
      * Shown on bills (Accounts Payable) when this has been set.
      *
-     * @property string PlannedPaymentDate
+     * @property \DateTimeInterface PlannedPaymentDate
      */
 
     /**
@@ -308,8 +308,8 @@ class Invoice extends Remote\Model
             'CurrencyRate' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Status' => [false, self::PROPERTY_TYPE_ENUM, null, false, false],
             'SentToContact' => [false, self::PROPERTY_TYPE_BOOLEAN, null, false, false],
-            'ExpectedPaymentDate' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'PlannedPaymentDate' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
+            'ExpectedPaymentDate' => [false, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
+            'PlannedPaymentDate' => [false, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'SubTotal' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'TotalTax' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Total' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
