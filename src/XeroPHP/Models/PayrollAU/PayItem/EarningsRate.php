@@ -89,6 +89,8 @@ class EarningsRate extends Remote\Model
     const ALLOWANCETYPE_TRANSPORT = 'TRANSPORT';
 
     const ALLOWANCETYPE_TRAVEL = 'TRAVEL';
+    
+    const ALLOWANCETYPE_JOBKEEPER = 'JOBKEEPER'
 
     const ALLOWANCETYPE_OTHER = 'OTHER';
 
